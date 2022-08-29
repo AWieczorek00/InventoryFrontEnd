@@ -1,0 +1,16 @@
+<table class="table table-striped" >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees$ | async">
+        <th scope="row">{{employee.id}}</th>
+        <td>{{employee.name}}</td>
+        <td>{{employee.surname}}</td>
+      </tr>
+    </tbody>
+  </table>

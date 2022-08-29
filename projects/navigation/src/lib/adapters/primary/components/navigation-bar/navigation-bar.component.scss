@@ -1,0 +1,31 @@
+nav{
+    padding-left: 80px;
+    background-color: #FF6347;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.home{
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    padding-right: 30px;
+}
+
+.second{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+button{
+    color: white;
+    border-color: white;
+    float: right;
+    margin-right: 20px;
+    font-size: x-large;
+}
+
+button:hover{
+    color: #7FFF00;
+}
