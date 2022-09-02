@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { AddEquipmentComponentModule, EquipmentsComponentModule, HttpEmployeeServiceModule, HttpEquipmentServiceModule } from '@equipment';
 import { NavigationBarComponentModule } from '@navigation';
-import { AddEmployeeComponentModule, EmployeesComponentModule, HttpEmployeeServiceModule } from '@employee';
-import { EmployeePage } from './employee.page';
+import { EquipmentPage } from './equipment.page';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RequestInterceptor } from '../request.interceptor';
 
@@ -11,16 +11,17 @@ import { RequestInterceptor } from '../request.interceptor';
       RouterModule.forChild([
         {
           path: '',
-          component: EmployeePage,
+          component: EquipmentPage,
         }
       ]),
+  EquipmentsComponentModule,
+  HttpEquipmentServiceModule,
   NavigationBarComponentModule,
-  EmployeesComponentModule,
-  HttpEmployeeServiceModule,
-  AddEmployeeComponentModule
+  AddEquipmentComponentModule,
+  HttpEmployeeServiceModule
 ],
-  	declarations: [EmployeePage],
+  	declarations: [EquipmentPage],
   	providers: [{provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true}],
   	exports: [] })
-export class EmployeePageModule {
+export class EquipmentPageModule {
 }

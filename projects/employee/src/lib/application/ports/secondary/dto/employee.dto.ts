@@ -1,5 +1,5 @@
 export interface EmployeeDTO {
-  readonly id: string;
+  readonly id: number;
   readonly name: string;
   readonly surname: string;
 }

@@ -2,8 +2,8 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
+        <th scope="col">Imię</th>
+        <th scope="col">Nazwisko</th>
       </tr>
     </thead>
     <tbody>
@@ -11,6 +11,7 @@
         <th scope="row">{{employee.id}}</th>
         <td>{{employee.name}}</td>
         <td>{{employee.surname}}</td>
+        <td><button (click)="onClickDeleteed(employee)">Usuń</button></td>
       </tr>
     </tbody>
   </table>
