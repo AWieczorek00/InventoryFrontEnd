@@ -1,17 +1,27 @@
-<table class="table table-striped" >
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Imię</th>
-        <th scope="col">Nazwisko</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let employee of employees$ | async">
-        <th scope="row">{{employee.id}}</th>
-        <td>{{employee.name}}</td>
-        <td>{{employee.surname}}</td>
-        <td><button (click)="onClickDeleteed(employee)">Usuń</button></td>
-      </tr>
-    </tbody>
-  </table>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Imię</th>
+      <th scope="col">Nazwisko</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees$ | async">
+      <th scope="row">{{ employee.id }}</th>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.surname }}</td>
+      <td>
+        <div ngbDropdown>
+          <button class="btn" id="menu" ngbDropdownToggle>Opcje</button>
+          <div ngbDropdownMenu="menu">
+            <button ngbDropdownItem (click)="onClickDeleteed(employee)">
+              Usuń
+            </button>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

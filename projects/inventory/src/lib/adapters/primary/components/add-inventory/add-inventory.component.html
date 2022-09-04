@@ -1,0 +1,134 @@
+<!-- <ul>
+  <li *ngFor="let item of equipments$ | async">{{ item | json }}</li>
+</ul> -->
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <form
+        [formGroup]="addInventory"
+        style="width: 500px"
+        (ngSubmit)="onAddInvetorySubmited(addInventory)"
+      >
+        <div>
+          <div class="form-group">
+            <label for="exampleInputinventoryName">Nazwa inwetaryzacji</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleinventoryName"
+              aria-describedby="inventoryNameHelp"
+              placeholder="Nazwa inwetaryzacji"
+              formControlName="inventoryName"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputinventoryNumber">Numer inwetaryzacji</label>
+            <input
+              type="number"
+              class="form-control"
+              id="exampleInputInvetoryNumber"
+              placeholder="Numer inwetaryzacji"
+              formControlName="inventoryNumber"
+            />
+          </div>
+          <button type="submit" class="btn btn-own mt-3">Dodaj</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="margin-left: 20px; margin-top: 30px">
+  <div class="col-6">
+    <table class="table table-striped" style="max-width: 800px">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nazwa</th>
+          <th scope="col">Numer seryjny</th>
+          <th scope="col">Rodzaj</th>
+          <th scope="col">Data zakupu</th>
+          <th scope="col">Numer pokoju</th>
+          <th scope="col">Pracownik</th>
+          <th scope="col">W naprawie</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let equipment of equipments$ | async">
+        <tr
+          [ngStyle]="{
+            'background-color': equipment.repair ? '#ff4d4d' : ' #66ff66'
+          }"
+        >
+          <th scope="row">{{ equipment.id }}</th>
+          <td>{{ equipment.name }}</td>
+          <td>{{ equipment.serialNumber }}</td>
+          <td>{{ equipment.typeOfEquipment }}</td>
+          <td>{{ equipment.dateOfPurchase }}</td>
+          <td>{{ equipment.roomNumber }}</td>
+          <td>
+            <div *ngIf="equipment.employee as employee">
+              {{ employee.name }} {{ employee.surname }}
+            </div>
+            <div *ngIf="!equipment.employee">Sprzęt na pokój</div>
+          </td>
+          <td>
+            <div *ngIf="equipment.repair">Tak</div>
+            <div *ngIf="!equipment.repair">Nie</div>
+          </td>
+          <td>
+            <button
+              class="btn"
+              (click)="addEquipmentToNewArrayClicked(equipment)"
+            >
+              Dodaj
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-6">
+    <table class="table table-striped" style="width: 800px">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nazwa</th>
+          <th scope="col">Numer seryjny</th>
+          <th scope="col">Rodzaj</th>
+          <th scope="col">Data zakupu</th>
+          <th scope="col">Numer pokoju</th>
+          <th scope="col">Pracownik</th>
+          <th scope="col">W naprawie</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let equipment of equipmentToInventory">
+        <tr
+          [ngStyle]="{
+            'background-color': equipment.repair ? '#ff4d4d' : ' #66ff66'
+          }"
+        >
+          <th scope="row">{{ equipment.id }}</th>
+          <td>{{ equipment.name }}</td>
+          <td>{{ equipment.serialNumber }}</td>
+          <td>{{ equipment.typeOfEquipment }}</td>
+          <td>{{ equipment.dateOfPurchase }}</td>
+          <td>{{ equipment.roomNumber }}</td>
+          <td>
+            <div *ngIf="equipment.employee as employee">
+              {{ employee.name }} {{ employee.surname }}
+            </div>
+            <div *ngIf="!equipment.employee">Sprzęt na pokój</div>
+          </td>
+          <td>
+            <div *ngIf="equipment.repair">Tak</div>
+            <div *ngIf="!equipment.repair">Nie</div>
+          </td>
+          <td><button class="btn">Usuń</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

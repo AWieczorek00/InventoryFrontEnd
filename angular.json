@@ -127,10 +127,24 @@
       "prefix": "lib",
       "architect": {}
     },
-    "equipment": {
+    "inventory": {
       "projectType": "library",
-      "root": "projects/equipment",
-      "sourceRoot": "projects/equipment/src",
+      "root": "projects/inventory",
+      "sourceRoot": "projects/inventory/src",
+      "prefix": "lib",
+      "architect": {}
+    },
+    "test": {
+      "projectType": "library",
+      "root": "projects/test",
+      "sourceRoot": "projects/test/src",
+      "prefix": "lib",
+      "architect": {}
+    },
+    "equipment-lib": {
+      "projectType": "library",
+      "root": "projects/equipmentLib",
+      "sourceRoot": "projects/equipmentLib/src",
       "prefix": "lib",
       "architect": {}
     }

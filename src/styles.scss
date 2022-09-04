@@ -1,4 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+
+.btn-own {
+    background-color: #ff4500 !important;
+    border-radius: 10px !important;
+    border: none !important;
+    height: 40px !important;
+    color: white !important;
+    font-size: large !important;
+    font-weight: 500 !important;
+    
+  }
