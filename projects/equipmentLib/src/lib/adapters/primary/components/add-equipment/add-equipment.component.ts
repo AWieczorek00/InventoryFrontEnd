@@ -59,8 +59,8 @@ export class AddEquipmentComponent {
   }
 
   selectEmployeeHandler(event: any) {
-      this.employeeId = event.target.value;
-      console.log(event.target.value);
+    this.employeeId = event.target.value;
+    console.log(event.target.value);
   }
 
   selectChangeHandler(event: any) {

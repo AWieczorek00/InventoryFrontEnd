@@ -22,7 +22,7 @@
         <td>{{ equipment.name }}</td>
         <td>{{ equipment.serialNumber }}</td>
         <td>{{ equipment.typeOfEquipment }}</td>
-        <td>{{ equipment.dateOfPurchase }}</td>
+        <td>{{ equipment.dateOfPurchase | date:'dd-MM-yyyy' }}</td>
         <td>{{ equipment.roomNumber }}</td>
         <td>
           <div *ngIf="equipment.employee as employee"> {{ employee.name }} {{ employee.surname }}</div>
@@ -43,7 +43,7 @@
                 <button ngbDropdownItem (click)="onEquipmentDelete(equipment)">
                   Usuń
                 </button>
-                <!-- <button><a [routerLink]="'/sprzet/'+equipment.id">Modyfikuj</a></button> -->
+                <button ngbDropdownItem  [routerLink]="'/sprzet/'+equipment.id">Modyfikuj</button>
               </div>
             </div>
           </div>

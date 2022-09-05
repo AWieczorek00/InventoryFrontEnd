@@ -31,7 +31,7 @@
         <th scope="row">{{ inventory.id }}</th>
         <td class="ui-helper-center">{{ inventory.inventoryName }}</td>
         <td>{{ inventory.inventoryNumber }}</td>
-        <td>{{ inventory.dateOfCreation }}</td>
+        <td>{{ inventory.dateOfCreation | date:'dd-MM-yyyy' }}</td>
         <td *ngIf="details">
           <table class="table table-striped">
             <thead>
@@ -56,7 +56,7 @@
                 <td>{{ equipment.name }}</td>
                 <td>{{ equipment.serialNumber }}</td>
                 <td>{{ equipment.typeOfEquipment }}</td>
-                <td>{{ equipment.dateOfPurchase }}</td>
+                <td>{{ equipment.dateOfPurchase | date:'dd-MM-yyyy' }}</td>
                 <td>{{ equipment.roomNumber }}</td>
                 <td>
                   <div *ngIf="equipment.employee as employee">

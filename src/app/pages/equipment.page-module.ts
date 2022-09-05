@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavigationBarComponentModule } from '@navigation';
-import { AddEquipmentComponentModule, EquipmentsComponentModule, HttpEmployeeServiceModule, HttpEquipmentServiceModule } from '@equipmentLib';
+import { AddEquipmentComponentModule, EquipmentsComponentModule, HttpEmployeeServiceModule, HttpEquipmentServiceModule, OneEquipmentComponentModule } from '@equipmentLib';
 import { EquipmentPage } from './equipment.page';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RequestInterceptor } from '../request.interceptor';
@@ -20,7 +20,8 @@ import { RequestInterceptor } from '../request.interceptor';
     EquipmentsComponentModule,
     HttpEquipmentServiceModule,
     AddEquipmentComponentModule,
-    HttpEmployeeServiceModule
+    HttpEmployeeServiceModule,
+    OneEquipmentComponentModule
   ],
   declarations: [EquipmentPage],
   providers: [
