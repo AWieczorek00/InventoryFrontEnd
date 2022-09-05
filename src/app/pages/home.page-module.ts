@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavigationBarComponentModule } from '@navigation';
+import { HomeComponentModule } from '@home';
 import { HomePage } from './home.page';
 
 @NgModule({ imports: [CommonModule, 
@@ -11,7 +12,8 @@ import { HomePage } from './home.page';
           component: HomePage,
         }
       ]),
-  NavigationBarComponentModule
+  NavigationBarComponentModule,
+  HomeComponentModule,
 ],
   	declarations: [HomePage],
   	providers: [],

@@ -1,0 +1,28 @@
+<div class="login-conteiner">
+  <div style="text-align: center">
+    <div class="login-title">Witaj w inwetrayzacji</div>
+    <div class="text-btn">
+      <p>Wykonanie i sprawdzenie lsity inwetrayzacji</p>
+      <button class="btn-own" (click)="goToInvetoryClicked()">
+        Przejdz do inwetrayzacji
+      </button>
+    </div>
+    <div class="text-btn">
+      <p>Dodanie i sprawdzenie listy sprzętu</p>
+      <button class="btn-own" (click)="goToEquipmentClicked()">
+        Przejdz do sprzętu
+      </button>
+    </div>
+    <div class="text-btn">
+      <p>Dodanie i sprawdzenie listy pracowników</p>
+      <button class="btn-own" (click)="goToEmployeeClicked()">
+        Przejdz do pracowników
+      </button>
+    </div>
+    <div class="text-btn">
+      <button (click)="logout()" class="btn my-2 my-sm-0 logout" type="click">
+        Wyloguj
+      </button>
+    </div>
+  </div>
+</div>
