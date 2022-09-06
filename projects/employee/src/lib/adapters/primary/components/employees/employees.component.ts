@@ -17,6 +17,6 @@ export class EmployeesComponent {
   }
 
   onClickDeleteed(employeeDTO:EmployeeDTO): void {
-    this._removesEmployeeDto.remove(employeeDTO).subscribe();
+    this._removesEmployeeDto.remove(employeeDTO.id).subscribe();
   }
 }

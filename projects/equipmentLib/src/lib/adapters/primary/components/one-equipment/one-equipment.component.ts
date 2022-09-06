@@ -24,6 +24,8 @@ export class OneEquipmentComponent {
         this._getsOneEquipmentDto.getOne(contex.equipmentId as number)
       )
     );
+
+    
   equipmentId$: Observable<Partial<EquipmentContext>> =
     this._selectsEquipmentContext.select();
 

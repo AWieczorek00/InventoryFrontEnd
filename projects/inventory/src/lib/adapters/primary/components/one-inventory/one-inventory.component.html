@@ -1,0 +1,154 @@
+<div *ngIf="inventory$ | async as inventory">
+  {{ inventory | json }}
+</div>
+
+<div class="container" style="margin-top: 20px">
+  <div class="row">
+    <div class="col" style="margin-top: 25px">
+      <div *ngIf="inventory$ | async as inventory">
+        <ul class="list-group">
+          <li class="list-group-item">Nazwa: {{ inventory.inventoryName }}</li>
+          <li class="list-group-item">
+            Numer: {{ inventory.inventoryNumber }}
+          </li>
+          <li class="list-group-item">
+            Data zakupu: {{ inventory.dateOfCreation | date: "dd-MM-yyyy" }}
+          </li>
+          <li class="list-group-item">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nazwa</th>
+                  <th scope="col">Numer seryjny</th>
+                  <th scope="col">Rodzaj</th>
+                  <th scope="col">Data zakupu</th>
+                  <th scope="col">Numer pokoju</th>
+                  <th scope="col">Pracownik</th>
+                  <th scope="col">W naprawie</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let equipment of inventory.equipment">
+                <div *ngIf="addArray(equipment)"></div>
+                <tr
+                  [ngStyle]="{
+                    'background-color': equipment.repair
+                      ? '#ff4d4d'
+                      : ' #66ff66'
+                  }"
+                >
+                  <th scope="row">{{ equipment.id }}</th>
+                  <td>{{ equipment.name }}</td>
+                  <td>{{ equipment.serialNumber }}</td>
+                  <td>{{ equipment.typeOfEquipment }}</td>
+                  <td>{{ equipment.dateOfPurchase | date: "dd-MM-yyyy" }}</td>
+                  <td>{{ equipment.roomNumber }}</td>
+                  <td>
+                    <div *ngIf="equipment.employee as employee">
+                      {{ employee.name }} {{ employee.surname }}
+                    </div>
+                    <div *ngIf="!equipment.employee">Sprzęt na pokój</div>
+                  </td>
+                  <td>
+                    <div *ngIf="equipment.repair">Tak</div>
+                    <div *ngIf="!equipment.repair">Nie</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <!-- <div *ngIf="equipment$ | async as equipment">
+          <form [formGroup]="updateEquipment" (ngSubmit)="onUpadteEquipmentSubmited(updateEquipment,equipment)">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Nazwa</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleName"
+                aria-describedby="nameHelp"
+                placeholder="Nazwa"
+                formControlName="name"
+                name="name"
+                
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Numer seryjny</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputSurname"
+                placeholder="Numer seryjny"
+                formControlName="serialNumber"
+                
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Pokój</label>
+              <input
+                type="number"
+                class="form-control"
+                id="exampleInputSurname"
+                placeholder="Pokój"
+                formControlName="roomNumber"
+              />
+            </div>
+  
+            <div class="form-group">
+              <label for="exampleInputPassword1">Pracownicy</label>
+              <select
+                class="form-select"
+                name="selectEmployee"
+                (change)="selectEmployeeHandler($event)"
+              >
+                <option selected></option>
+                <option
+                  *ngFor="let employee of employees$ | async"
+                  [value]="employee.id"
+                >
+                  {{ employee.name }} {{ employee.surname }}
+                </option>
+              </select>
+            </div>
+  
+            <div class="form-group">
+              <label for="exampleInputPassword1">Urządzenia</label>
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                (change)="selectChangeHandler($event)"
+              >
+                <option selected></option>
+                <option value="Urządzenie">Urządzenia</option>
+                <option value="Komputer">Komputer</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Drukarka">Drukarka</option>
+                <option value="Skaner">Skaner</option>
+                <option value="Urzadzenie Wielo Funkcyjne">
+                  Urzadzenie Wielo Funkcyjne
+                </option>
+              </select>
+            </div>
+  
+            <div class="form-group">
+              <label for="exampleInputPassword1">Data zakupu</label>
+              <input
+                type="date"
+                class="form-control"
+                id="exampleInputSurname"
+                placeholder="Data zakupu"
+                formControlName="dateOfPurchase"
+              />
+            </div>
+  
+            <button type="submit" class="btn btn-own mt-3">Submit</button>
+          </form>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>

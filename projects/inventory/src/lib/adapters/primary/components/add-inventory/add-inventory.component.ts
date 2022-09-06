@@ -44,5 +44,13 @@ export class AddInventoryComponent {
       .subscribe();
       this.router.navigate(['/inwetaryzacje']);
   }
+
+
+  onEquipmentDeleteClicked(equipment:EquipmentDTO){
+    this.equipmentToInventory.forEach((element,index)=>{
+      if(element.id==equipment.id) this.equipmentToInventory.splice(index,1);
+   });
+  }
+
 }
 

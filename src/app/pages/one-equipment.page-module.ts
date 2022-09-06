@@ -5,6 +5,8 @@ import { EquipmentIdResolver, EquipmentIdResolverModule, HttpEmployeeServiceModu
 import { NavigationBarComponentModule } from '@navigation';
 import { OneEquipmentPage } from './one-equipment.page';
 import { FormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RequestInterceptor } from '../request.interceptor';
 
 @NgModule({ imports: [CommonModule, 
       RouterModule.forChild([
@@ -25,7 +27,7 @@ import { FormsModule } from '@angular/forms';
   FormsModule 
 ],
   	declarations: [OneEquipmentPage],
-  	providers: [],
+  	providers: [{provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true}],
   	exports: [] })
 export class OneEquipmentPageModule {
 }

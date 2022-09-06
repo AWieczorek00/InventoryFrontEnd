@@ -20,9 +20,9 @@ export class HttpEmployeeService implements GetsAllEmployeeDtoPort, AddsEmployee
     return this._client.post<EmployeeDTO>("http://localhost:8080/employee/add", employeeDTO).pipe(map(() => void 0));
   }
 
-  remove(employeeDTO: EmployeeDTO): Observable<void> {
-    // let params = new HttpParams().append('id',id)
+  remove(id: number): Observable<void> {
+    
 
-    return this._client.delete<EmployeeDTO>("http://localhost:8080/employee/delete",{body:employeeDTO}).pipe(map(() => void 0));
+    return this._client.delete<EmployeeDTO>("http://localhost:8080/employee/delete/"+id).pipe(map(() => void 0));
   }
 }

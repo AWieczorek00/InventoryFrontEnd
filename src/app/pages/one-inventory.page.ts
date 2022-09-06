@@ -5,9 +5,9 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-one-equipment-page',
-  templateUrl: './one-equipment.page.html',
+  selector: 'app-one-inventory-page',
+  templateUrl: './one-inventory.page.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class OneEquipmentPage {}
+export class OneInventoryPage {}

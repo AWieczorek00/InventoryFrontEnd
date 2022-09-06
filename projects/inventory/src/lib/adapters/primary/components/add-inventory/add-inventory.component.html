@@ -126,7 +126,7 @@
             <div *ngIf="equipment.repair">Tak</div>
             <div *ngIf="!equipment.repair">Nie</div>
           </td>
-          <td><button class="btn">Usuń</button></td>
+          <td><button class="btn" (click)="onEquipmentDeleteClicked(equipment)">Usuń</button></td>
         </tr>
       </tbody>
     </table>

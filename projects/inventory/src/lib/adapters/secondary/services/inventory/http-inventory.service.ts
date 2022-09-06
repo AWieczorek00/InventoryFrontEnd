@@ -5,10 +5,11 @@ import { map } from 'rxjs/operators';
 import { GetsAllInventoryDtoPort } from '../../../../application/ports/secondary/dto/gets-all-inventory.dto-port';
 import { AddsInventoryDtoPort } from '../../../../application/ports/secondary/dto/adds-inventory.dto-port';
 import { RemovesInventoryDtoPort } from '../../../../application/ports/secondary/dto/removes-inventory.dto-port';
+import { GetsOneInventoryDtoPort } from '../../../../application/ports/secondary/dto/gets-one-inventory.dto-port';
 import { InventoryDTO } from '../../../../application/ports/secondary/dto/inventory.dto';
 
 @Injectable()
-export class HttpInventoryService implements GetsAllInventoryDtoPort, AddsInventoryDtoPort, RemovesInventoryDtoPort {
+export class HttpInventoryService implements GetsAllInventoryDtoPort, AddsInventoryDtoPort, RemovesInventoryDtoPort, GetsOneInventoryDtoPort {
   constructor(private _client: HttpClient) {
   }
 
@@ -22,5 +23,9 @@ export class HttpInventoryService implements GetsAllInventoryDtoPort, AddsInvent
 
   remove(inventory: InventoryDTO): Observable<void> {
     return this._client.delete<InventoryDTO>("http://localhost:8080/inventory/delete",{body:inventory}).pipe(map(() => void 0));
+  }
+
+  getOne(id: number): Observable<InventoryDTO> {
+    return this._client.get<InventoryDTO>("http://localhost:8080/inventory/"+id);
   }
 }
