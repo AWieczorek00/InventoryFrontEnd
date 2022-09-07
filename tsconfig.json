@@ -1,1 +1,38 @@
-{"compileOnSave":false,"compilerOptions":{"baseUrl":"./","outDir":"./dist/out-tsc","forceConsistentCasingInFileNames":true,"strict":true,"noImplicitOverride":true,"noPropertyAccessFromIndexSignature":true,"noImplicitReturns":true,"noFallthroughCasesInSwitch":true,"sourceMap":true,"declaration":false,"downlevelIteration":true,"experimentalDecorators":true,"moduleResolution":"node","importHelpers":true,"target":"es2017","module":"es2020","lib":["es2020","dom"],"paths":{"@login":["projects/login/src/index.ts"],"@navigation":["projects/navigation/src/index.ts"],"@employee":["projects/employee/src/index.ts"],"@inventory":["projects/inventory/src/index.ts"],"@test":["projects/test/src/index.ts"],"@equipmentLib":["projects/equipmentLib/src/index.ts"],"@home":["projects/home/src/index.ts"],"@one-inventory":["projects/one-inventory/src/index.ts"]}},"angularCompilerOptions":{"enableI18nLegacyMessageIdFormat":false,"strictInjectionParameters":true,"strictInputAccessModifiers":true,"strictTemplates":true}}
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "es2020",
+    "lib": ["es2020", "dom"],
+    "paths": {
+      "@login": ["projects/login/src/index.ts"],
+      "@navigation": ["projects/navigation/src/index.ts"],
+      "@employee": ["projects/employee/src/index.ts"],
+      "@inventory": ["projects/inventory/src/index.ts"],
+      "@test": ["projects/test/src/index.ts"],
+      "@equipmentLib": ["projects/equipmentLib/src/index.ts"],
+      "@home": ["projects/home/src/index.ts"],
+      "@one-inventory": ["projects/one-inventory/src/index.ts"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

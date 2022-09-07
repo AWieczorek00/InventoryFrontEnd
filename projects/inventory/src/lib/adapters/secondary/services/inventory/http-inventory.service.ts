@@ -6,10 +6,11 @@ import { GetsAllInventoryDtoPort } from '../../../../application/ports/secondary
 import { AddsInventoryDtoPort } from '../../../../application/ports/secondary/dto/adds-inventory.dto-port';
 import { RemovesInventoryDtoPort } from '../../../../application/ports/secondary/dto/removes-inventory.dto-port';
 import { GetsOneInventoryDtoPort } from '../../../../application/ports/secondary/dto/gets-one-inventory.dto-port';
+import { SetsInventoryDtoPort } from '../../../../application/ports/secondary/dto/sets-inventory.dto-port';
 import { InventoryDTO } from '../../../../application/ports/secondary/dto/inventory.dto';
 
 @Injectable()
-export class HttpInventoryService implements GetsAllInventoryDtoPort, AddsInventoryDtoPort, RemovesInventoryDtoPort, GetsOneInventoryDtoPort {
+export class HttpInventoryService implements GetsAllInventoryDtoPort, AddsInventoryDtoPort, RemovesInventoryDtoPort, GetsOneInventoryDtoPort, SetsInventoryDtoPort {
   constructor(private _client: HttpClient) {
   }
 
@@ -27,5 +28,9 @@ export class HttpInventoryService implements GetsAllInventoryDtoPort, AddsInvent
 
   getOne(id: number): Observable<InventoryDTO> {
     return this._client.get<InventoryDTO>("http://localhost:8080/inventory/"+id);
+  }
+
+  set(inventoryDTO: Partial<InventoryDTO>): Observable<void> {
+    return this._client.put<InventoryDTO>("http://localhost:8080/inventory/update", inventoryDTO).pipe(map(() => void 0));
   }
 }

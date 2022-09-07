@@ -32,7 +32,7 @@ export class AddEquipmentComponent {
   });
 
   typeOfEquipment: string = '';
-  employeeId: number | undefined;
+  employeeId: number | undefined
 
   constructor(
     @Inject(GETS_ALL_EMPLOYEE_DTO)
@@ -44,7 +44,8 @@ export class AddEquipmentComponent {
     this.employees$.pipe(
       map((employee) => employee.find((employee) => employee.id == 1))
     );
-    console.log(equipment.get('dateOfPurchase')?.value);
+
+
     this._addsEquipmentDto
       .add({
         name: equipment.get('name')?.value,
@@ -64,7 +65,7 @@ export class AddEquipmentComponent {
   }
 
   selectChangeHandler(event: any) {
-    //update the ui
+    
     this.typeOfEquipment = event.target.value;
     console.log(this.typeOfEquipment);
   }

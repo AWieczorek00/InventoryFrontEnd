@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HttpInventoryServiceModule, InMemoryInventoryContexStorageModule, InventoryIdResolver, InventoryIdResolverModule, OneInventoryComponentModule } from '@inventory';
+import { HttpEquipmentServiceModule, HttpInventoryServiceModule, InMemoryInventoryContexStorageModule, InventoryIdResolver, InventoryIdResolverModule, OneInventoryComponentModule } from '@inventory';
 import { NavigationBarComponentModule } from '@navigation';
 import { OneInventoryPage } from './one-inventory.page';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -19,9 +19,10 @@ import { RequestInterceptor } from '../request.interceptor';
       ]),
   NavigationBarComponentModule,
   OneInventoryComponentModule,
-  HttpInventoryServiceModule,
   InMemoryInventoryContexStorageModule,
-  InventoryIdResolverModule
+  InventoryIdResolverModule,
+  HttpInventoryServiceModule,
+  HttpEquipmentServiceModule
 ],
   	declarations: [OneInventoryPage],
   	providers: [{provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true}],

@@ -42,6 +42,7 @@
       (change)="selectEmployeeHandler($event)"
     >
       <option selected></option>
+      <option value="0">Sprzęt na pokój</option>
       <option *ngFor="let employee of employees$ | async" [value]="employee.id">
         {{ employee.name }} {{ employee.surname }}
       </option>

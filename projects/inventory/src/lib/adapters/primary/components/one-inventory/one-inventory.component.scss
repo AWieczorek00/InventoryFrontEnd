@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+  }
+  
+
+  .column1 {
+    float: left;
+    width: 37%;
+    padding: 10px;
+  }
+
+  .column2 {
+    float: left;
+    width: 23%;
+    padding: 10px;
+  }
+  .column3 {
+    float: left;
+    width: 31.5%;
+    padding: 10px;
+  }
+
+  
+  /* Clear floats after the columns */
+  .row2:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
